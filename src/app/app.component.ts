@@ -9,4 +9,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'ProyectoAlertasFront';
+  footer = 'Universidad del Quindío  2025-1';
 }
