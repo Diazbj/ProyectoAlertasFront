@@ -1,13 +1,17 @@
 <header>
   <p>Página inicial de {{ title }}</p>
-  <ul>
-    <li><a href="">Inicio</a></li>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/registro">Registro</a></li>
-    <li><a href="/activar-usuario">ActivarUsuario</a></li>
-  </ul>
- </header>
- <router-outlet></router-outlet>
- <footer>
+  <nav>
+    <div style="display: flex; gap: 1rem;">
+      <div><a routerLink="/">Inicio</a></div>
+      <div><a routerLink="/login">Login</a></div>
+      <div><a routerLink="/registro">Registro</a></div>
+      <div><a routerLink="/activar-usuario">Activar Usuario</a></div>
+    </div>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
   <p>{{ footer }}</p>
- </footer>
+</footer>
