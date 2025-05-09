@@ -1,1 +1,55 @@
-<p>registro works!</p>
+<div class="main">
+    <div class="cont-main">
+      <div class="titulo">
+        <hr>
+          <h1>Registro de usuario</h1>
+        <hr>
+      </div>
+      <form [formGroup]="registroForm" (ngSubmit)="registro()" novalidate="">
+        <div class="contRegistroForm">
+          <div class="cont-label">
+            <label>Nombre</label>
+          </div>
+          <div>
+            <input type="text" placeholder="Ingrese su primer nombre"/>
+          </div>
+          <div class="cont-label">
+            <label>Apellido</label>
+          </div>
+          <div>
+            <input type="text" placeholder="Ingrese su primer apellido"/>
+          </div>
+          <div class="cont-label">
+            <label>Correo electrónico</label>
+          </div>
+          <div>
+            <input type="text" placeholder="Ingrese su correo electrónico"/>
+          </div>
+          <div class="cont-label">
+            <label>Número telefonico</label>
+          </div>
+          <div>
+            <input type="text" placeholder="Ingrese su número telefonico"/>
+          </div>
+          <div class="cont-label">
+            <label>Dirección</label>
+          </div>
+          <div>
+            <input type="text" placeholder="Ingrese su dirección"/>
+          </div>
+          <div class="cont-label">
+            <label>Contraseña</label>
+          </div>
+          <div>
+            <input type="password"/>
+          </div>
+          <div>
+            <div class="cont-button">
+              <button id="buttonIngresar">Ingresar</button>
+              <button id="cancelar" (click)="irInicio()">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

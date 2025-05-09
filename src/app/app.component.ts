@@ -7,6 +7,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'ProyectoAlertas';
   footer = 'Universidad del Quindío  2025-1';

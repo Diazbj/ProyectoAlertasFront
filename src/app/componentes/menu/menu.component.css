@@ -1,0 +1,28 @@
+ul{
+    list-style: none;
+}
+
+.menu{
+    border-radius: 20px;
+    background-color: #0B1F3A;
+    height: 100vh;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 2fr;
+    justify-items: center;
+}
+
+.menu > div{
+    padding: 1.5rem;
+}
+
+.menu > div > h1{
+    color: white;
+}
+
+#cerrarSesion{
+    background-color: #0B1F3A;
+    border: 1px solid white;
+    color: white;
+}
