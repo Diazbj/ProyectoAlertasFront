@@ -10,42 +10,48 @@
           <div class="cont-label">
             <label>Nombre</label>
           </div>
-          <div>
-            <input type="text" placeholder="Ingrese su primer nombre"/>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su primer nombre" formControlName="nombreUsuario"/>
+            <i></i>
           </div>
           <div class="cont-label">
             <label>Apellido</label>
           </div>
-          <div>
-            <input type="text" placeholder="Ingrese su primer apellido"/>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su primer apellido" formControlName="apellidoUsuario"/>
+            <i></i>
           </div>
           <div class="cont-label">
             <label>Correo electrónico</label>
           </div>
-          <div>
-            <input type="text" placeholder="Ingrese su correo electrónico"/>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su correo electrónico" formControlName="emailUsuario"/>
+            <i></i>
           </div>
           <div class="cont-label">
             <label>Número telefonico</label>
           </div>
-          <div>
-            <input type="text" placeholder="Ingrese su número telefonico"/>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su número telefonico" formControlName="numeroContactoUsuario"/>
+            <i></i>
           </div>
           <div class="cont-label">
             <label>Dirección</label>
           </div>
-          <div>
-            <input type="text" placeholder="Ingrese su dirección"/>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su dirección" formControlName="direccionUsuario"/>
+            <i></i>
           </div>
           <div class="cont-label">
             <label>Contraseña</label>
           </div>
-          <div>
-            <input type="password"/>
+          <div class="input-with-icon">
+            <input type="password" formControlName="passwordUsuario"/>
+            <i></i>
           </div>
           <div>
             <div class="cont-button">
-              <button id="buttonIngresar">Ingresar</button>
+              <button type="submit" id="buttonIngresar" [disabled]="registroForm.invalid">Ingresar</button>
               <button id="cancelar" (click)="irInicio()">Cancelar</button>
             </div>
           </div>

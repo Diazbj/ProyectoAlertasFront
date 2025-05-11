@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -15,7 +15,8 @@ export class LoginComponent {
 
   constructor(private formBuilder: FormBuilder, public router:Router){
     this.loginForm = this.formBuilder.group({
-      
+      emailUsuario: ['', [Validators.required]],
+      passwordUsuario: ['', [Validators.required]]
     })
   }
 

@@ -11,19 +11,25 @@
           <div class="cont-label">
             <label>Correo electrónico</label>
           </div>
-          <input type="text" placeholder="Ingres su correo electrónico"/>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingres su correo electrónico" formControlName="emailUsuario"/>
+            <i></i>
+          </div>
         </div>
         <div class="login-form">
           <div class="cont-label">
             <label>Password</label>
           </div>
-          <input type="password"/>
+          <div class="input-with-icon">
+            <input type="password" formControlName="passwordUsuario"/>
+            <i></i>
+          </div>
         </div>
         <div class="login-form">
           <a id="recuperarContrasena" routerLink="/recuperar-password">¿Olvido su contraseña?</a>
         </div>
         <div class="cont-button">
-          <button id="buttonIngresar" (click)="login()">Ingresar</button>
+          <button type="submit" id="buttonIngresar" (click)="login()" [disabled]="loginForm.invalid">Ingresar</button>
           <button id="cancelar" (click)="irInicio()">Cancelar</button>
         </div>
       </div>

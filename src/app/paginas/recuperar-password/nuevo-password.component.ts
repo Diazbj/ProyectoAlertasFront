@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,10 @@ export class RecuperarPassword {
 
   constructor(private formBuilder: FormBuilder, public router:Router){
     this.nuevoPasswordForm = this.formBuilder.group({
-
+      emailUsuario: ['', [Validators.required]],
+      codigoAutenticacion: ['', [Validators.required]],
+      primerPassword: ['', [Validators.required]],
+      segundoPassword: ['', [Validators.required]]
     });
   }
 
