@@ -25,8 +25,16 @@ export class MenuComponent {
   public goToReporte(){
 
   }
-  
+
+  public goToCategoria(){
+    this.router.navigate(["/categorias"]);
+  }
+
   public goToPerfil(){
-    
+    this.router.navigate(["/perfil"]);
+  }
+
+  public goToActualizarPassword(){
+    this.router.navigate(["/actualizar-password"]);
   }
 }

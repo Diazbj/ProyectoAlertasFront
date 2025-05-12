@@ -29,8 +29,8 @@
           <a id="recuperarContrasena" routerLink="/recuperar-password">¿Olvido su contraseña?</a>
         </div>
         <div class="cont-button">
-          <button type="submit" id="buttonIngresar" (click)="login()" [disabled]="loginForm.invalid">Ingresar</button>
-          <button id="cancelar" (click)="irInicio()">Cancelar</button>
+          <button type="submit" id="buttonIngresar" (click)="loginFormulario()" [disabled]="loginForm.invalid">Ingresar</button>
+          <button id="cancelar" (click)="goToInicio()">Cancelar</button>
         </div>
       </div>
     </form>

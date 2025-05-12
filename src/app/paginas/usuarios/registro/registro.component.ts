@@ -23,11 +23,11 @@ export class RegistroComponent {
     });
   }
 
-  public registro(){
+  public formRegiUsua(){
     console.log("We are here");
   }
 
-  public irInicio(){
+  public goToInicio(){
     this.router.navigate(["/"]);
   }
 

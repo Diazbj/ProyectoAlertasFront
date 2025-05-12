@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-actualizar-password',
-  imports: [],
+  imports: [RouterOutlet,RouterModule,ReactiveFormsModule],
   templateUrl: './actualizar-password.component.html',
   styleUrl: './actualizar-password.component.css'
 })
@@ -19,12 +19,16 @@ export class ActualizarPasswordComponent {
     });
   }
 
-  public buttonActualizar(){
+  public formActuPass(){
 
   }
 
-  public irPerfil(){
-    
+  public actualizarPassword(){
+
+  }
+
+  public goToInicioUsuario(){
+    this.router.navigate(["/home-usuario"]);
   }
 
 }

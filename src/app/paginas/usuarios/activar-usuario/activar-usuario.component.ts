@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-activar-usuario',
@@ -8,22 +9,23 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./activar-usuario.component.css']
 })
 
-export class ActivarUsuarioComponent implements OnInit {
+export class ActivarUsuarioComponent {
 
   activarForm!: FormGroup;
 
-  ngOnInit(): void {
-    console.log('ActivarUsuarioComponent cargado');
-  }
-
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder, public router: Router){
     this.activarForm = this.formBuilder.group({
-
+      correoElectronicoUsuario: ['', [Validators.required]],
+      codigoAutenticacionUsuario: ['', [Validators.required]]
     });
   }
 
-  public login(){
+  public formActiUsua(){
     console.log("We are here");
+  }
+
+  public goToInicio(){
+    this.router.navigate(["/"]);
   }
 
 }

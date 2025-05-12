@@ -1,1 +1,47 @@
-<p>perfil works!</p>
+<div class="main">
+    <div class="cont-main">
+      <div class="titulo">
+        <hr>
+          <h1>Actualizar perfil de usuario</h1>
+        <hr>
+      </div>
+      <form [formGroup]="actualizarPerfilForm" (ngSubmit)="formActuPerf()" novalidate="">
+        <div class="contActualizarPerfilForm">
+          <div class="cont-label">
+            <label>Nombre</label>
+          </div>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su primer nombre" formControlName="nombreUsuario"/>
+            <i></i>
+          </div>
+          <div class="cont-label">
+            <label>Apellido</label>
+          </div>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su primer apellido" formControlName="apellidoUsuario"/>
+            <i></i>
+          </div>
+          <div class="cont-label">
+            <label>Número telefonico</label>
+          </div>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su número telefonico" formControlName="numeroContactoUsuario"/>
+            <i></i>
+          </div>
+          <div class="cont-label">
+            <label>Dirección</label>
+          </div>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese su dirección" formControlName="direccionUsuario"/>
+            <i></i>
+          </div>
+          <div>
+            <div class="cont-button">
+              <button type="submit" id="buttonIngresar" [disabled]="actualizarPerfilForm.invalid">Actualizar</button>
+              <button id="cancelar" (click)="goToIniciousuario()">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -5,7 +5,7 @@
           <h1>Registro de usuario</h1>
         <hr>
       </div>
-      <form [formGroup]="registroForm" (ngSubmit)="registro()" novalidate="">
+      <form [formGroup]="registroForm" (ngSubmit)="formRegiUsua()" novalidate="">
         <div class="contRegistroForm">
           <div class="cont-label">
             <label>Nombre</label>
@@ -52,7 +52,7 @@
           <div>
             <div class="cont-button">
               <button type="submit" id="buttonIngresar" [disabled]="registroForm.invalid">Ingresar</button>
-              <button id="cancelar" (click)="irInicio()">Cancelar</button>
+              <button id="cancelar" (click)="goToInicio()">Cancelar</button>
             </div>
           </div>
         </div>

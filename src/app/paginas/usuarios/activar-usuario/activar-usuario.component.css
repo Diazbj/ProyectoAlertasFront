@@ -18,23 +18,3 @@
     gap: 0.3rem;
     align-items: center;
 }
-
-#buttonActivarCuenta{
-    background-color: white;
-    border: 1px solid #0B1F3A;
-}
-
-#buttonActivarCuenta:hover{
-    background-color: #0B1F3A;
-    color: white;
-}
-
-#cancelar{
-    background-color: white;
-    border: 1px solid #0B1F3A;
-}
-
-#cancelar:hover{
-    background-color: #0B1F3A;
-    color: white;
-}
