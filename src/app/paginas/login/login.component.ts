@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
-import { AuthService } from '../servicios/auth.service';
-import { TokenService } from '../servicios/token.service';
+import { AuthService } from '../../servicios/auth.service';
+import { TokenService } from '../../servicios/token.service';
 import { LoginDTO } from '../../dto/login-dto';
 import Swal from 'sweetalert2';
 
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   selector: 'app-login',
   imports: [ReactiveFormsModule,RouterOutlet,RouterModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 
 export class LoginComponent {
@@ -20,35 +20,40 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder, 
     public router:Router,
-    private autShervice: AuthService,
-    private tokenSercive: TokenService
+    private authService: AuthService,
+    private tokenService: TokenService
   ){
     this.loginForm = this.formBuilder.group({
-      emailUsuario: ['', [Validators.required]],
-      passwordUsuario: ['', [Validators.required]]
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     })
   }
 
-  public loginFormulario(){
-    const loginDTO = this.loginForm.value as LoginDTO;
+  public login() {
+ const loginDTO = this.loginForm.value as LoginDTO;
 
-    this.router.navigate(["/home-usuario"])
 
-    /*
-    this.autShervice.iniciarSesion(loginDTO).subscribe({
-      next: (data) => {
-        this.tokenSercive.login(data.mensaje.token);
-      },
-      error: (error) => {
+ this.authService.iniciarSesion(loginDTO).subscribe({
+   next: (data) => {
+     this.tokenService.login(data.mensaje.token);
+     console.log('Token recibido:', data.mensaje.token);
+     console.log('Token almacenado:', sessionStorage.getItem("AuthToken"));
+     console.log(data.mensaje.token);
+   },
+   error: (error) => {
+
+    console.log(error.error.contenido);
+     if (error.error.mensaje == "Usuario o contraseña incorrectos") {
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: error.error.contenido
-        })
+          text: 'Usuario o contraseña incorrectos'
+        });
       }
-    })
-      */
-  }
+   },
+ });
+}
+
 
   public goToInicio(){
     this.router.navigate(["/"]);

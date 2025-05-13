@@ -3,38 +3,35 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
-  imports: [],
+  standalone: true,
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
-
 export class MenuComponent {
 
-  constructor(public router: Router){
-    
+  constructor(public router: Router) {}
+
+  public cerrarSesion(): void {
+    this.router.navigate(['/']);
   }
 
-  public cerrarSesion(){
-    this.router.navigate(["/"]);
+  public goToInicio(): void {
+    this.router.navigate(['/home-usuario']);
   }
 
-  public goToInicio(){
-    
+  public goToReporte(): void {
+    this.router.navigate(['/home-usuario/reportes']);
   }
 
-  public goToReporte(){
-
+  public goToCategoria(): void {
+    this.router.navigate(['/home-usuario/categorias']);
   }
 
-  public goToCategoria(){
-    this.router.navigate(["/categorias"]);
+  public goToPerfil(): void {
+    this.router.navigate(['/home-usuario/perfil']);
   }
 
-  public goToPerfil(){
-    this.router.navigate(["/perfil"]);
-  }
-
-  public goToActualizarPassword(){
-    this.router.navigate(["/actualizar-password"]);
+  public goToActualizarPassword(): void {
+    this.router.navigate(['/home-usuario/actualizar-password']);
   }
 }

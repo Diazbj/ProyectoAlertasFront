@@ -5,14 +5,14 @@
         <h1>Iniciar Sesión</h1>
       <hr>
     </div>
-    <form [formGroup]="loginForm" (ngSubmit)="loginFormulario()" novalidate="">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate="">
       <div class="contLoginForm">
         <div class="login-form">
           <div class="cont-label">
             <label>Correo electrónico</label>
           </div>
           <div class="input-with-icon">
-            <input type="text" placeholder="Ingres su correo electrónico" formControlName="emailUsuario"/>
+            <input type="text" placeholder="Ingres su correo electrónico" formControlName="email"/>
             <i></i>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <label>Password</label>
           </div>
           <div class="input-with-icon">
-            <input type="password" formControlName="passwordUsuario"/>
+            <input type="password" formControlName="password"/>
             <i></i>
           </div>
         </div>
@@ -29,7 +29,7 @@
           <a id="recuperarContrasena" routerLink="/recuperar-password">¿Olvido su contraseña?</a>
         </div>
         <div class="cont-button">
-          <button type="submit" id="buttonIngresar" (click)="loginFormulario()" [disabled]="loginForm.invalid">Ingresar</button>
+          <button type="submit" id="buttonIngresar" [disabled]="loginForm.invalid">Ingresar</button>
           <button id="cancelar" (click)="goToInicio()">Cancelar</button>
         </div>
       </div>
