@@ -1,0 +1,27 @@
+<div class="menu">
+    <div>
+        <h1> <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;Bienvenido</h1>
+    </div>
+    <div>
+        <ul>
+            <li class="li-menu">
+                <i class="fa-solid fa-house" (click)="goToInicio()">&nbsp;&nbsp;Inicio</i>
+            </li>
+            <li class="li-menu">
+                <i class="fa-solid fa-flag" (click)="goToReporte()">&nbsp;&nbsp;Reporte</i>
+            </li>
+            <li class="li-menu">
+                <i class="fa-solid fa-user" (click)="goToCategoria()">&nbsp;&nbsp;Categoria</i>
+            </li>
+            <li class="li-menu">
+                <i class="fa-solid fa-user" (click)="goToPerfil()">&nbsp;&nbsp;Actualizar Perfil</i>
+            </li>
+            <li class="li-menu">
+                <i class="fa-solid fa-user" (click)="goToActualizarPassword()">&nbsp;&nbsp;Actualizar Password</i>
+            </li>
+        </ul>
+    </div>
+    <div class="cont-button">
+        <button id="cerrarSesion" (click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</div>

@@ -1,1 +1,70 @@
-<p>categorias works!</p>
+<div class="main">
+    <div class="cont-main">
+      <div class="titulo">
+        <hr>
+          <h1>Administrar Categorias</h1>
+        <hr>
+      </div>
+      <form [formGroup]="categoriaForm" (ngSubmit)="cateForm()" novalidate="">
+        <div class="contCategoriaForm">
+          <div class="cont-label">
+            <label>Nombre Categoria</label>
+          </div>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese el nombre de la categoría" formControlName="nombreCategoria"/>
+            <i></i>
+          </div>
+          <div class="cont-label">
+            <label>Color Categoria</label>
+          </div>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese el color de la categoría" formControlName="colorCategoria"/>
+            <i></i>
+          </div>
+          <div class="cont-label">
+            <label>Descripción Categoria</label>
+          </div>
+          <div class="input-with-icon">
+            <input type="text" placeholder="Ingrese la descripción de la categoría" formControlName="descripcionCategoria"/>
+            <i></i>
+          </div>
+          <div>
+            <div class="cont-button">
+              <button type="submit" id="ingresarCategoria" [disabled]="categoriaForm.invalid">Ingresar</button>
+              <button id="cancelar" (click)="goToInicio()">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre Categoria</th>
+                    <th>Color Categoria</th>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                @for(item of categoria; track $index){
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <p>{{item.nombre}}</p>
+                        </td>
+                        <td>
+                            <p>{{item.color}}</p>
+                        </td>
+                        <td>
+                            <p>{{item.descripcion}}</p>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+  </div>

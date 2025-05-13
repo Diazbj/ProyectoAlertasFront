@@ -1,2 +1,33 @@
-<h1>Activar Usuario</h1>
-<p>Activa tu cuenta ingresando el código enviado al correo.</p>
+<div class="main">
+    <div class="cont-main">
+      <div class="titulo">
+        <hr>
+          <h1>Activar usuario</h1>
+        <hr>
+      </div>
+      <form [formGroup]="activarForm" (ngSubmit)="formActiUsua()" novalidate="">
+        <div class="contActivarForm">
+          <div class="login-form">
+            <div class="cont-label">
+              <label>Ingresa tu correo electrónico</label>
+            </div>
+            <div class="input-with-icon">
+              <input type="text" formControlName="correoElectronicoUsuario"/>
+              <i></i>
+            </div>
+            <div class="cont-label">
+              <label>Ingresa tu código de autenticación</label>
+            </div>
+            <div class="input-with-icon">
+              <input type="password" formControlName="codigoAutenticacionUsuario"/>
+              <i></i>
+            </div>
+          </div>
+          <div class="cont-button">
+            <button type="submit" id="buttonActivarCuenta" [disabled]="activarForm.invalid">Activar cuenta</button>
+            <button id="cancelar" (click)="goToInicio()">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
