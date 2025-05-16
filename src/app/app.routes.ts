@@ -13,6 +13,7 @@ import { ListarReportesComponent } from './paginas/reportes/listar-reportes/list
 import { CategoriasComponent } from './paginas/categorias/categorias.component';
 import { HistorialEstadosComponent } from './paginas/reportes/historial-estados/historial-estados.component';
 import { HomeUsuarioComponent } from './paginas/home-usuario/home-usuario.component';
+import { HomeUsuarioInicioReportesComponent } from './paginas/home-usuario-inicio-reportes/home-usuario-inicio-reportes.component';
 
 export const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -25,7 +26,8 @@ export const routes: Routes = [
     path: 'home-usuario',
     component: HomeUsuarioComponent,
     children: [
-      { path: '', redirectTo: 'categorias', pathMatch: 'full' }, // Redirige a 'categorias' por defecto
+      { path: '', redirectTo: 'home-usuario-inicio-reportes', pathMatch: 'full' }, // Redirige a 'categorias' por defecto
+      { path: 'home-usuario-inicio-reportes', component: HomeUsuarioInicioReportesComponent },
       { path: 'perfil', component: PerfilComponent },
       { path: 'actualizar-password', component: ActualizarPasswordComponent },
       { path: 'categorias', component: CategoriasComponent },

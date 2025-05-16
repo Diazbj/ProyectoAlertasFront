@@ -30,31 +30,27 @@ export class LoginComponent {
   }
 
   public login() {
- const loginDTO = this.loginForm.value as LoginDTO;
-
-
- this.authService.iniciarSesion(loginDTO).subscribe({
-   next: (data) => {
-     this.tokenService.login(data.mensaje.token);
-     console.log('Token recibido:', data.mensaje.token);
-     console.log('Token almacenado:', sessionStorage.getItem("AuthToken"));
-     console.log(data.mensaje.token);
-   },
-   error: (error) => {
-
-    console.log(error.error.contenido);
-     if (error.error.mensaje == "Usuario o contraseña incorrectos") {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Usuario o contraseña incorrectos'
-        });
-      }
-   },
- });
-}
-
-
+    const loginDTO = this.loginForm.value as LoginDTO;
+    this.authService.iniciarSesion(loginDTO).subscribe({
+      next: (data) => {
+        this.tokenService.login(data.mensaje.token);
+        console.log('Token recibido:', data.mensaje.token);
+        console.log('Token almacenado:', sessionStorage.getItem("AuthToken"));
+        console.log(data.mensaje.token);
+      },
+      error: (error) => {
+        console.log(error.error.contenido);
+        if (error.error.mensaje == "Usuario o contraseña incorrectos") {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Usuario o contraseña incorrectos'
+          });
+        }
+      },
+    });
+  }
+  
   public goToInicio(){
     this.router.navigate(["/"]);
   }
