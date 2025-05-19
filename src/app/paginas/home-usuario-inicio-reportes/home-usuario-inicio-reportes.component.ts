@@ -4,10 +4,13 @@ import { MapaComponent } from "../../componentes/mapa/mapa.component";
 import { ReporteDTO } from '../../dto/reporte-dto';
 import { ReporteService } from '../../servicios/reporte.service';
 import { MapaService } from '../../servicios/mapa.service';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-home-usuario-inicio-reportes',
-  imports: [CommonModule,MapaComponent],
+  standalone: true,
+  imports: [CommonModule,MapaComponent, RouterModule],
   templateUrl: './home-usuario-inicio-reportes.component.html',
   styleUrl: './home-usuario-inicio-reportes.component.css'
 })

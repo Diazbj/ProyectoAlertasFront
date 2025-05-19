@@ -1,0 +1,17 @@
+.contReportForm {
+    text-align: center;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 1rem;
+}
+
+.contReportForm div {
+    width: 100%;
+}
+
+.contReportForm > :last-child {
+    grid-column: span 2;
+}

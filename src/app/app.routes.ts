@@ -31,7 +31,10 @@ export const routes: Routes = [
       { path: 'perfil', component: PerfilComponent },
       { path: 'actualizar-password', component: ActualizarPasswordComponent },
       { path: 'categorias', component: CategoriasComponent },
-      { path: 'crear-reporte', component: CrearReporteComponent },
+      { path: 'crear-reporte',
+        loadComponent: () => import('./paginas/reportes/crear-reporte/crear-reporte.component')
+        .then(m => m.CrearReporteComponent)
+      },
       { path: 'editar-reporte/:id', component: EditarReporteComponent },
       { path: 'reporte/:id', component: VerReporteComponent },
       { path: 'reportes', component: ListarReportesComponent },

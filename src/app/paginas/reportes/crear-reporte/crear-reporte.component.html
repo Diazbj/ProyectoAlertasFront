@@ -1,1 +1,68 @@
-<p>crear-reporte works!</p>
+<div class="main">
+  <div class="cont-main">
+    <div class="titulo">
+      <hr>
+      <h1>Crear Reporte</h1>
+      <hr>
+    </div>
+    <form [formGroup]="reporteForm" (ngSubmit)="formCrearReporte()" novalidate>
+      <div class="contReportForm">
+        <div class="cont-label">
+          <label>Título</label>
+        </div>
+        <div class="input-with-icon">
+          <input type="text" placeholder="Ingrese el título" formControlName="titulo" />
+          <i></i>
+        </div>
+        <div class="cont-label">
+          <label>Descripción</label>
+        </div>
+        <div class="input-with-icon">
+          <textarea placeholder="Ingrese la descripción" formControlName="descripcion"></textarea>
+          <i></i>
+        </div>
+        <div class="cont-label">
+          <label>Latitud</label>
+        </div>
+        <div class="input-with-icon">
+          <input type="text" placeholder="Latitud" formControlName="latitud" />
+          <i></i>
+        </div>
+        <div class="cont-label">
+          <label>Longitud</label>
+        </div>
+        <div class="input-with-icon">
+          <input type="text" placeholder="Longitud" formControlName="longitud" />
+          <i></i>
+        </div>
+        <div class="cont-label">
+          <label>Ciudad</label>
+        </div>
+        <div class="input-with-icon">
+          <input type="text" placeholder="Ingrese la ciudad" formControlName="ciudad" />
+          <i></i>
+        </div>
+        <div class="cont-label">
+          <label>Categoría</label>
+        </div>
+        <div class="input-with-icon">
+          <input type="text" placeholder="Ingrese la categoría" formControlName="categoria" />
+          <i></i>
+        </div>
+        <div class="cont-label">
+          <label>Imágenes</label>
+        </div>
+        <div class="input-with-icon">
+          <input type="text" placeholder="URL de imágenes separadas por comas" formControlName="imagenes" />
+          <i></i>
+        </div>
+        <div>
+          <div class="cont-button">
+            <button type="submit" [disabled]="reporteForm.invalid">Crear Reporte</button>
+            <button (click)="goToInicio()">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
