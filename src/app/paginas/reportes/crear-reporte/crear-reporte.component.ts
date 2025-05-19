@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CrearReporteComponent {
   reporteForm!: FormGroup;
+  selectedFiles: File[] = [];
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.reporteForm = this.formBuilder.group({
@@ -21,15 +22,23 @@ export class CrearReporteComponent {
       longitud: ['', [Validators.required]],
       ciudad: ['', [Validators.required]],
       categoria: ['', [Validators.required]],
-      imagenes: ['', [Validators.required]]
+
     });
   }
 
   formCrearReporte() {
     console.log(this.reporteForm.value);
+    console.log('Archivos seleccionados:', this.selectedFiles);
   }
 
   goToInicio() {
     this.router.navigate(['/']);
+  }
+
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files) {
+      this.selectedFiles = Array.from(input.files);
+    }
   }
 }

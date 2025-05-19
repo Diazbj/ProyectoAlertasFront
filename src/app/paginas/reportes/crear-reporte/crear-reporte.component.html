@@ -49,12 +49,18 @@
           <input type="text" placeholder="Ingrese la categoría" formControlName="categoria" />
           <i></i>
         </div>
+
         <div class="cont-label">
           <label>Imágenes</label>
         </div>
         <div class="input-with-icon">
-          <input type="text" placeholder="URL de imágenes separadas por comas" formControlName="imagenes" />
-          <i></i>
+          <input type="file" multiple (change)="onFileSelected($event)" />
+        </div>
+        <div *ngIf="selectedFiles.length > 0" class="file-list">
+          <p>Archivos seleccionados:</p>
+          <ul>
+            <li *ngFor="let file of selectedFiles">{{ file.name }}</li>
+          </ul>
         </div>
         <div>
           <div class="cont-button">

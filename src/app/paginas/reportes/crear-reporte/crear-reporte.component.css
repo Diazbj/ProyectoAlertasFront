@@ -15,3 +15,9 @@
 .contReportForm > :last-child {
     grid-column: span 2;
 }
+
+.file-list {
+  grid-column: span 2;
+  text-align: left;
+  margin-left: 10px;
+}
