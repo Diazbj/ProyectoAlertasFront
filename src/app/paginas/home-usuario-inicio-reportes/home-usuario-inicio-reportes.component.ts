@@ -6,7 +6,6 @@ import { ReporteService } from '../../servicios/reporte.service';
 import { MapaService } from '../../servicios/mapa.service';
 import { RouterModule } from '@angular/router';
 
-
 @Component({
   selector: 'app-home-usuario-inicio-reportes',
   standalone: true,
