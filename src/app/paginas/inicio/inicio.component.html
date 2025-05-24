@@ -13,10 +13,14 @@
         </p>
       </div>
       <div>
-        <div class="cont-button">
-          <button id="iniciarSesion" (click)="irLogin()" >Iniciar sesión</button>
-          <button id="registrarse" (click)="irRegistro()">Registrarse</button>
-        </div>
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-md-start">
+        <button class="btn btn-primary btn-lg" (click)="irLogin()">
+          <i class="fas fa-sign-in-alt me-2"></i> Iniciar sesión
+        </button>
+        <button class="btn btn-outline-secondary btn-lg" (click)="irRegistro()">
+          <i class="fas fa-user-plus me-2"></i> Registrarse
+        </button>
+      </div>
       </div>
     </div>
     <div class="cont-fond-pers">
