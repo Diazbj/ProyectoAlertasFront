@@ -1,33 +1,40 @@
-<div class="main">
-    <div class="cont-main">
-      <div class="titulo">
-        <hr>
-          <h1>Activar usuario</h1>
-        <hr>
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+  <div class="col-md-6 col-lg-4">
+    <div class="card shadow-lg rounded">
+      <div class="card-body p-4">
+        <h3 class="card-title text-center mb-4">Activar usuario</h3>
+        <form [formGroup]="activarForm" (ngSubmit)="activarUsuario()" novalidate>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+              <input type="email" id="email" class="form-control" formControlName="correoElectronicoUsuario" placeholder="ejemplo@correo.com">
+            </div>
+          </div>
+
+          <!-- Código -->
+          <div class="mb-3">
+            <label for="codigo" class="form-label">Código de autenticación</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+              <input type="password" id="codigo" class="form-control" formControlName="codigoAutenticacionUsuario" placeholder="Código recibido">
+            </div>
+          </div>
+
+          <!-- Botones -->
+          <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-success" [disabled]="activarForm.invalid">
+              <i class="fa-solid fa-check-circle me-2"></i>Activar cuenta
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="goToInicio()">
+              <i class="fa-solid fa-times me-2"></i>Cancelar
+            </button>
+          </div>
+
+        </form>
       </div>
-      <form [formGroup]="activarForm" (ngSubmit)="formActiUsua()" novalidate="">
-        <div class="contActivarForm">
-          <div class="login-form">
-            <div class="cont-label">
-              <label>Ingresa tu correo electrónico</label>
-            </div>
-            <div class="input-with-icon">
-              <input type="text" formControlName="correoElectronicoUsuario"/>
-              <i></i>
-            </div>
-            <div class="cont-label">
-              <label>Ingresa tu código de autenticación</label>
-            </div>
-            <div class="input-with-icon">
-              <input type="password" formControlName="codigoAutenticacionUsuario"/>
-              <i></i>
-            </div>
-          </div>
-          <div class="cont-button">
-            <button type="submit" id="buttonActivarCuenta" [disabled]="activarForm.invalid">Activar cuenta</button>
-            <button id="cancelar" (click)="goToInicio()">Cancelar</button>
-          </div>
-        </div>
-      </form>
     </div>
   </div>
+</div>
