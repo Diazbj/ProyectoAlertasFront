@@ -5,7 +5,7 @@ import { RegistroComponent } from './paginas/usuarios/registro/registro.componen
 import { ActivarUsuarioComponent } from './paginas/usuarios/activar-usuario/activar-usuario.component';
 import { PerfilComponent } from './paginas/usuarios/perfil/perfil.component';
 import { ActualizarPasswordComponent } from './paginas/usuarios/actualizar-password/actualizar-password.component';
-import { RecuperarPassword } from './paginas/recuperar-password/nuevo-password.component';
+import { RecuperarPasswordComponent } from './paginas/recuperar-password/recuperar-password.component';
 import { CrearReporteComponent } from './paginas/reportes/crear-reporte/crear-reporte.component';
 import { EditarReporteComponent } from './paginas/reportes/editar-reporte/editar-reporte.component';
 import { VerReporteComponent } from './paginas/reportes/ver-reporte/ver-reporte.component';
@@ -20,7 +20,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'activar-usuario', component: ActivarUsuarioComponent },
-  { path: 'recuperar-password', component: RecuperarPassword },
+  { path: 'recuperar-password', component: RecuperarPasswordComponent },
 
   {
     path: 'home-usuario',

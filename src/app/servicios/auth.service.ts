@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { LoginDTO } from '../dto/login-dto';
 import { MensajeDTO} from '../dto/mensaje-dto';
 import { UsuarioNuevoCodigoDTO } from '../dto/usuarios/usuario-nuevo-codigo-dto';
+import { PasswordNuevoDTO } from '../dto/password-nuevo-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,11 @@ export class AuthService {
     return this.http.post<MensajeDTO>(`${this.authURL}/login/recuperarPassword`, nuevoCodigo);
   }
 
-  
+  actualizarPassword(recuperarPassword:PasswordNuevoDTO):Observable<MensajeDTO>{
+    return this.http.post<MensajeDTO>(`${this.authURL}/login/password/nuevo`, recuperarPassword);
+  }
+
+
 
 
 
